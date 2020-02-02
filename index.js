@@ -1,64 +1,95 @@
 // Declare our variables
 const prompt = require('readline-sync')
-let maxRange = ['red, blue, black, white']
-const maxGuesses = [1,2,3]
-let currentGuess = 0
-// Generate random number
-maxGuesses.forEach((colors) => {
-    let randomColor = maxRange[Number(Math.floor(Math.random() * maxRange.length))]
-    console.log(`${maxGuesses}, ${randomColor}`)
-  })
+// let allColors = ['red, blue, black, white']
+let colorRed = "red"
+let colorBlue = "blue"
+let colorBlack = "black"
+let colorWhite = "white"
 
-// Get user name
+// user have to insert their name
 const userName = prompt.question("Hello, YOU!!! what's your name?\n")
-// Get users guess
-// Interpolate the user guess into welcome prompt
+// after insert name the next queston is 
 let userGuess = prompt.question(
-  `Hi ${userName}, Let me make your life easy ok? I have chose a door between the colors ${maxGuesses}, 
-  you have ${maxGuesses} tries to find the correct door or YOU die jijiji.\n`
+  `Hi ${userName}, Let me make your life easy ok? I have chose a door between the colors ${colorRed}, ${colorBlue}, ${colorBlack} and ${colorWhite}. 
+  You have to open the door and answer the question correct or YOU will die.\n`
 )
 
-// // Handle the users guess to determine if they won, lost, or should guess again.
-// const handleGuess = userGuess => {
-//   // Loop through users guesses until they ``     f,ewmmqhave no guesses left.
-//   for (let guesses = 0; guesses < maxGuesses; guesses++) {
-//     if (userGuess == randomColor) {
-//       console.log('You win! 🏆')
-//       playAgain()
-//     } else if (guesses === maxGuesses - 1) {
-//       console.log('You lose! 💀')
-//       playAgain()
-//     } else if (userGuess > randomColor) {
-//       console.log('Think lower')
-//       currentGuess++
-//       console.log('Guesses left: ', maxGuesses - currentGuess)
-//       userGuess = prompt.question('Guess again...\n')
-//     } else {
-//       console.log('Think higher.')
-//       currentGuess++
-//       console.log('Guesses left: ', maxGuesses - currentGuess)
-//       userGuess = prompt.question('Guess again...\n')
-//     }
-//   }
-// }
+        const userColor1 = oneColor => {
+            if (oneColor === colorRed){
+                let answer1 = prompt.question("What is Javascript?\n a language or a car\n");
+                winOrLose(answer1);
+            }
+        }
+        const winOrLose = firstAnswer => {
+            if (firstAnswer === "a language") {
+                console.log("YOU DID IT JOB GOOD")
+            } else {
+                console.log("DIE PAINFULLY, GAME OVER")
+            }
+        }
 
-// // Ask the user if they want to play again
-// const playAgain = () => {
-//   let playAgain = prompt.question('Do you want to play again? YEAH || NO\n')
-//   playAgain = playAgain.toLowerCase()
-//   if (playAgain === 'YEAH') {
-//     // Reset our game variables
-//     let randomColor= maxRange[Number(Math.floor(Math.random() * maxRange.length))]
-//     let newGuess = prompt.question(
-//         `Hi ${userName}, Let me make your life easy ok? I have chose a door between the colors ${maxRange} and purple, 
-//         you have ${maxGuesses} tries to find the correct door or YOU die jijiji.\n`
-//       )
-//     currentGuess = 0
-//     guesses = 0
-//     handleGuess(newGuess)
-//   } else {
-//     console.log('Thanks for playing. \nSee you later.')
-//   }
-// }
+                    const userColor2 = oneColor => {
+                        if (oneColor === colorBlue){
+                            let answer2 = prompt.question("What is a string?\n a line of caracters or a bus\n");
+                            rightOrWrong(answer2)
+                        }
+                    }
+                    const rightOrWrong = SecondAnswer => {
+                        if (SecondAnswer === "a line of caracters") {
+                            console.log("YOU DID IT JOB GOOD")
+                        } else {
+                            console.log("DIE PAINFULLY, GAME OVER")
+                        }
+                    }
 
-// handleGuess(userGuess)
+
+                                const userColor3 = oneColor => {
+                                    if (oneColor === colorBlack){
+                                        let answer3 = prompt.question("What is a array?\n a list or an animal\n");
+                                        correctOrWrong(answer3)
+                                    }
+                                }
+                                const correctOrWrong = ThirdAnswer => {
+                                    if (ThirdAnswer === "a list") {
+                                        console.log("YOU DID IT JOB GOOD")
+                                    } else {
+                                        console.log("DIE PAINFULLY, GAME OVER")
+                                    }
+                                }
+
+
+                                        const userColor4 = oneColor => {
+                                            if (oneColor === colorWhite){
+                                                let answer4 = prompt.question("What is an object?\n a list or an animal\n");
+                                                maybeOrNot(answer4)
+                                            }
+                                        }
+                                        const maybeOrNot = LastAnswer => {
+                                            if (LastAnswer === "a list") {
+                                                console.log("YOU DID IT JOB GOOD")
+                                            } else {
+                                                console.log("DIE PAINFULLY, GAME OVER")
+                                            }
+                                        }
+  //let they user play again 
+  const playAgain = () => {
+  let playAgain = prompt.question('Do you want to play again? YEAH || NO\n')
+  playAgain = playAgain.toLowerCase()            
+  if (playAgain === 'YEAH') {
+    let newGuess = prompt.question(
+        `Hi ${userName}, Let me make your life easy ok? I have chose a door between the colors ${colorRed}, ${colorBlue}, ${colorBlack} and ${colorWhite}. 
+        You have to open the door and answer the question correct or YOU will die.\n`
+      )
+      userColor1(userGuess)
+      userColor2(userGuess)
+      userColor3(userGuess)
+      userColor4(userGuess)  
+  } else {
+    console.log('Thanks for playing. \nSee you later.')
+  }
+}
+
+    userColor1(userGuess)
+    userColor2(userGuess)
+    userColor3(userGuess)
+    userColor4(userGuess)
