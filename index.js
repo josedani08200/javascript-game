@@ -16,12 +16,12 @@ let userGuess = prompt.question(
 
         const userColor1 = oneColor => {
             if (oneColor === colorRed){
-                let answer1 = prompt.question("What is Javascript?\n a language or a car\n");
+                let answer1 = prompt.question("What is Javascript?\n A. a language\n B. a car\n C. an airplane\n D. a beast");
                 winOrLose(answer1);
             }
         }
         const winOrLose = firstAnswer => {
-            if (firstAnswer === "a language") {
+            if (firstAnswer === "A") {
                 console.log("YOU DID IT JOB GOOD")
             } else {
                 console.log("DIE PAINFULLY, GAME OVER")
@@ -30,12 +30,12 @@ let userGuess = prompt.question(
 
                     const userColor2 = oneColor => {
                         if (oneColor === colorBlue){
-                            let answer2 = prompt.question("What is a string?\n a line of caracters or a bus\n");
+                            let answer2 = prompt.question("What is a string?\n A. line of caracters\n B. a bus\n C. fruit\n D. guacamole\n");
                             rightOrWrong(answer2)
                         }
                     }
                     const rightOrWrong = SecondAnswer => {
-                        if (SecondAnswer === "a line of caracters") {
+                        if (SecondAnswer === "A") {
                             console.log("YOU DID IT JOB GOOD")
                         } else {
                             console.log("DIE PAINFULLY, GAME OVER")
@@ -45,12 +45,12 @@ let userGuess = prompt.question(
 
                                 const userColor3 = oneColor => {
                                     if (oneColor === colorBlack){
-                                        let answer3 = prompt.question("What is a array?\n a list or an animal\n");
+                                        let answer3 = prompt.question("What is a array?\n A. a list\n B. an animal\n C. a key\n D. woah\n");
                                         correctOrWrong(answer3)
                                     }
                                 }
                                 const correctOrWrong = ThirdAnswer => {
-                                    if (ThirdAnswer === "a list") {
+                                    if (ThirdAnswer === "A") {
                                         console.log("YOU DID IT JOB GOOD")
                                     } else {
                                         console.log("DIE PAINFULLY, GAME OVER")
@@ -60,12 +60,12 @@ let userGuess = prompt.question(
 
                                         const userColor4 = oneColor => {
                                             if (oneColor === colorWhite){
-                                                let answer4 = prompt.question("What is an object?\n a list or an animal\n");
+                                                let answer4 = prompt.question("What is an object?\n A. a list\n B. an animal\n C. woof\n D. a link\n");
                                                 maybeOrNot(answer4)
                                             }
                                         }
                                         const maybeOrNot = LastAnswer => {
-                                            if (LastAnswer === "a list") {
+                                            if (LastAnswer === "A") {
                                                 console.log("YOU DID IT JOB GOOD")
                                             } else {
                                                 console.log("DIE PAINFULLY, GAME OVER")
